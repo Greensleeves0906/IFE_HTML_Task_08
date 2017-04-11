@@ -1,0 +1,102 @@
+*{
+	box-sizing: border-box;
+}
+.grid-container{
+    width: 100%;  
+    background: #FFF;  
+    padding: 10px;  
+    border:1px solid #eee;
+}
+.row:after{/*伪元素 在class row后插入内容*/
+	content: "";/*content配合after使用 指插入的内容*/
+	display: table;/*作为块级表格来显示*/
+	clear: both;
+}
+[class*="col-"]{/*把所有“col-”的类都设置为以下样式*/
+	float:left;
+	height: 70px;
+	background: #eee;
+	border: 10px solid #FFFFFF;
+}
+.col-1 {
+	width: 8.33%;
+}
+.col-2 {
+	width: 16.66%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+@media (max-width: 768px) {
+.col-1 {	
+	width: 16.66%;/*2栏宽*/
+}
+.col-2 {
+	width: 66.66%;/*8栏宽*/
+}
+.row .col-2 ~ .col-2{  
+    width: 25%;/*出现在col-2后面的col-2  可以不是紧跟 但父元素必须相同*/   
+} 
+.col-3 {
+	width: 25%;/*依然3栏宽*/
+}
+.col-4 {
+	width: 50%;/*6栏宽*/
+}
+.row .col-4:last-of-type{  /*父级是特定类型的最后一个子元素*/
+   width: 100%;  /*最后一个四栏div变成十二栏宽*/
+}  
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.row .col-6:last-of-type {
+	width: 25%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+}
